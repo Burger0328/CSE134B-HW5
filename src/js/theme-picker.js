@@ -28,12 +28,9 @@ function changeTheme(event) {
     const root = document.documentElement;
 
     if (selectedTheme === "system") {
-        delete root.dataset.theme;
-        root.classList.remove("light", "dark");
+        root.removeAttribute("data-theme");
     } else {
-        root.dataset.theme = selectedTheme;
-        root.classList.remove("light", "dark");
-        root.classList.add(selectedTheme);
+        root.setAttribute("data-theme", selectedTheme);
     }
 
     try {

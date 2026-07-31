@@ -8,6 +8,8 @@ Run npm install to install the dependencies. Run npm run dev to start the develo
 
 I chose Option A, the theme picker. Without JavaScript, the site uses color-scheme and prefers-color-scheme to follow the user's system theme. JavaScript reveals a labeled menu with System, Light, and Dark choices. The selected theme is saved in localStorage and works across pages. If JavaScript does not load, the menu stays hidden so the page does not show a broken control.
 
+The theme-init script is placed in the head so it can apply the saved theme as early as possible and reduce a flash of the wrong theme.
+
 ## Part 2: Coastal Weather Component
 
 The custom element is named coastal-weather. It gets current weather data from the Open-Meteo forecast endpoint at https://api.open-meteo.com/v1/forecast. The endpoint does not require an API key.
