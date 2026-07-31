@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+title: Search
+description: Search Mara Voss's portfolio projects, experience, and background.
+pageKey: search
+permalink: /search/index.html
+excludeFromSearch: true
+pageScript: /js/search.js
+---
+<section>
+    <h1>Search</h1>
+    <p class="intro">
+        Search Mara's projects, experience, background, and areas of focus.
+    </p>
+
+    <form class="search-form" role="search" data-search-form hidden>
+        <label for="site-search">Search the portfolio</label>
+        <div>
+            <input
+                type="search"
+                id="site-search"
+                name="query"
+                autocomplete="off"
+                required>
+            <button type="submit">Search</button>
+        </div>
+    </form>
+
+    <p class="search-status" data-search-status role="status" aria-live="polite"></p>
+    <ol class="search-results" data-search-results></ol>
+
+    <noscript>
+        <p>
+            Search requires JavaScript. You can still
+            <a href="/sitemap.xml">browse the complete sitemap</a>.
+        </p>
+    </noscript>
+</section>

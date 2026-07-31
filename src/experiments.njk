@@ -1,0 +1,71 @@
+---
+layout: layouts/base.njk
+title: HTML Experiments
+description: Semantic HTML and custom element experiments from CSE 134B coursework.
+permalink: /experiments/index.html
+---
+<section>
+    <h1>HTML Experiments</h1>
+    <p>
+        This page preserves media and custom-element experiments from the
+        earlier portfolio build.
+    </p>
+</section>
+
+<section>
+    <h2>Template</h2>
+    <p>The template stores reusable markup for a future archive project card.</p>
+    <template id="archive-project-template">
+        <article>
+            <h3>Archive Project</h3>
+            <p>This is reusable project-card content.</p>
+        </article>
+    </template>
+</section>
+
+<section>
+    <h2>Audio</h2>
+    <audio controls>
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+        <p>Your browser does not support the audio element.</p>
+    </audio>
+</section>
+
+<section>
+    <h2>Video</h2>
+    <video controls width="640" height="360">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+        <p>Your browser does not support the video element.</p>
+    </video>
+</section>
+
+<section>
+    <h2>Canvas</h2>
+    <canvas id="archive-canvas" width="320" height="180">
+        A line drawing of an archive box.
+    </canvas>
+</section>
+
+<section>
+    <h2>Hello World Custom Element</h2>
+    <p>The element below prints “Hello World!” in the console without changing the DOM.</p>
+    <hello-world></hello-world>
+</section>
+
+<section>
+    <h2>MathML</h2>
+    <p>Einstein's mass-energy equivalence formula is:</p>
+    <math display="block" aria-label="E equals m c squared">
+        <mrow>
+            <mi>E</mi>
+            <mo>=</mo>
+            <mi>m</mi>
+            <msup><mi>c</mi><mn>2</mn></msup>
+        </mrow>
+    </math>
+</section>
+
+<noscript>
+    <p>JavaScript is disabled, so the canvas drawing and console message are unavailable.</p>
+</noscript>

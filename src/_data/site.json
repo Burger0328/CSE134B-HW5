@@ -1,0 +1,20 @@
+{
+  "title": "Mara Voss Portfolio",
+  "author": "Mara Voss",
+  "description": "Portfolio of Mara Voss, a digital archivist and interactive media designer.",
+  "email": "hello@maravoss.com",
+  "location": "Port Alder, Oregon",
+  "year": 2026,
+  "socialLinks": [
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/maravoss" }
+  ],
+  "navigation": [
+    { "key": "home", "label": "Home", "url": "/" },
+    { "key": "about", "label": "About", "url": "/about/" },
+    { "key": "experience", "label": "Experience", "url": "/experience/" },
+    { "key": "projects", "label": "Projects", "url": "/projects/" },
+    { "key": "resume", "label": "Resume", "url": "/resume/" },
+    { "key": "contact", "label": "Contact", "url": "/contact/" },
+    { "key": "search", "label": "Search", "url": "/search/" }
+  ]
+}

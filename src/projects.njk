@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+title: Projects
+description: Selected digital preservation and interactive storytelling projects by Mara Voss.
+pageKey: projects
+permalink: /projects/index.html
+---
+<section>
+    <h1>Projects</h1>
+    <p class="intro">
+        Mara's projects explore digital preservation, local history,
+        interactive storytelling, and accessible web design.
+    </p>
+</section>
+
+<section>
+    <h2>Selected Projects</h2>
+    <ol class="project-grid">
+        {% for project in projects %}
+            <li>
+                <article class="project-card">
+                    <p class="project-number">{{ project.number }}</p>
+                    <img src="{{ project.image }}" alt="{{ project.alt }}" width="1536" height="1024">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.summary }}</p>
+                    <p><strong>Role:</strong> {{ project.role }}</p>
+                    <p><strong>Focus:</strong> {{ project.focus }}</p>
+                    <a href="/projects/{{ project.slug }}/">View Project Details</a>
+                </article>
+            </li>
+        {% endfor %}
+    </ol>
+</section>

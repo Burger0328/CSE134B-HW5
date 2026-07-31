@@ -1,0 +1,43 @@
+<template id="coastal-weather-template">
+    <article class="weather-card">
+        <h2>Coastal Conditions</h2>
+        <p class="weather-status" data-weather-status role="status"></p>
+
+        <p>
+            <label for="weather-units">Units</label>
+            <select id="weather-units" data-weather-units>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="celsius">Celsius</option>
+            </select>
+        </p>
+
+        <dl class="weather-details" data-weather-details hidden>
+            <div>
+                <dt>Location</dt>
+                <dd data-weather-location></dd>
+            </div>
+            <div>
+                <dt>Conditions</dt>
+                <dd data-weather-description></dd>
+            </div>
+            <div>
+                <dt>Temperature</dt>
+                <dd data-weather-temperature></dd>
+            </div>
+            <div>
+                <dt>Wind</dt>
+                <dd data-weather-wind></dd>
+            </div>
+            <div>
+                <dt>Updated</dt>
+                <dd><time data-weather-time></time></dd>
+            </div>
+        </dl>
+
+        <button type="button" data-weather-retry hidden>Try again</button>
+        <p class="weather-credit">
+            Weather data from
+            <a href="https://open-meteo.com/" rel="external">Open-Meteo</a>.
+        </p>
+    </article>
+</template>

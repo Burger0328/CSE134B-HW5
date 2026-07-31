@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+title: Contact
+description: Contact Mara Voss about digital archives, museums, or community preservation projects.
+pageKey: contact
+permalink: /contact/index.html
+---
+<section>
+    <h1>Contact</h1>
+    <p class="intro">
+        Contact Mara about digital archives, interactive storytelling,
+        museum websites, or community preservation projects.
+    </p>
+</section>
+
+<section>
+    <h2>Contact Information</h2>
+    <address>
+        <p>
+            <strong>Email:</strong>
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </p>
+        <p><strong>Location:</strong> {{ site.location }}</p>
+    </address>
+</section>
+
+<section>
+    <h2>Send a Message</h2>
+    <form name="professional-inquiry" method="post" action="/contact-success/" data-netlify="true">
+        <fieldset>
+            <legend>Professional Inquiry</legend>
+            <p>
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+            </p>
+            <p>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+            </p>
+            <p>
+                <label for="organization">Organization</label><br>
+                <input type="text" id="organization" name="organization" autocomplete="organization">
+            </p>
+            <p>
+                <label for="subject">Subject</label><br>
+                <input type="text" id="subject" name="subject" required>
+            </p>
+            <p>
+                <label for="message">Message</label><br>
+                <textarea id="message" name="message" rows="8" required></textarea>
+            </p>
+            <p><button type="submit">Submit Message</button></p>
+        </fieldset>
+    </form>
+</section>

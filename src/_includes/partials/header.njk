@@ -1,0 +1,17 @@
+<header class="site-header" data-pagefind-ignore="all">
+    <a class="site-name" href="/">{{ site.author }}</a>
+
+    <nav aria-label="Primary navigation">
+        <ul>
+            {% for item in site.navigation %}
+                <li>
+                    <a href="{{ item.url }}"{% if pageKey == item.key %} aria-current="page"{% endif %}>
+                        {{ item.label }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    {% include "partials/theme-picker.njk" %}
+</header>

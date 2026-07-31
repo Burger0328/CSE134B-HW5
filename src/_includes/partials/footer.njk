@@ -1,0 +1,7 @@
+<footer class="site-footer" data-pagefind-ignore="all">
+    <p>&copy; {{ site.year }} {{ site.author }}</p>
+    {% for link in site.socialLinks %}
+        <p><a href="{{ link.url }}">{{ link.label }}</a></p>
+    {% endfor %}
+    <p><a href="/experiments/">HTML Experiments</a></p>
+</footer>

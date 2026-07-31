@@ -1,0 +1,54 @@
+[
+  {
+    "number": "01",
+    "slug": "harbor-letter-archive",
+    "title": "The Harbor Letter Archive",
+    "image": "/images/harbor-letter-archive.jpg",
+    "alt": "Letters and archival documents arranged on a table",
+    "summary": "A digital archive that organizes letters written by harbor workers between 1940 and 1960.",
+    "role": "Digital Archive Designer",
+    "focus": "Metadata, navigation, and accessibility",
+    "challenge": "Hundreds of letters had inconsistent dates, names, and physical annotations, making them difficult for visitors to browse.",
+    "process": "Mara created a small metadata vocabulary, grouped related correspondence, wrote image descriptions, and tested a chronological navigation structure.",
+    "outcome": "The resulting prototype lets visitors move between people, years, and subjects while keeping each letter connected to its archival context."
+  },
+  {
+    "number": "02",
+    "slug": "vanishing-storefronts",
+    "title": "Vanishing Storefronts",
+    "image": "/images/vanishing-storefronts.jpg",
+    "alt": "Historic storefronts along a small town street",
+    "summary": "A local-history project documenting small businesses that have disappeared from Port Alder.",
+    "role": "Researcher and Content Designer",
+    "focus": "Photography, interviews, and local history",
+    "challenge": "The stories existed across family photographs, newspaper clippings, and personal memories without a shared structure.",
+    "process": "Mara conducted short interviews, compared historic and present-day photographs, and organized each story around a place and its former community role.",
+    "outcome": "The project presents concise histories that are easy to scan while preserving links to original sources and longer interview records."
+  },
+  {
+    "number": "03",
+    "slug": "weather-room",
+    "title": "Weather Room",
+    "image": "/images/weather-room.jpg",
+    "alt": "Archive materials related to a coastal storm",
+    "summary": "An interactive story combining weather records, radio clips, maps, and fictional diary entries from a 1978 coastal storm.",
+    "role": "Interactive Media Designer",
+    "focus": "Narrative structure, audio, and archival media",
+    "challenge": "Scientific records and personal stories used different timelines and levels of detail.",
+    "process": "Mara aligned every source to a single storm timeline and designed short scenes that clearly distinguish historical records from fictional interpretation.",
+    "outcome": "Visitors can follow the storm hour by hour, listen to selected clips, and inspect the sources behind each scene."
+  },
+  {
+    "number": "04",
+    "slug": "tide-marks",
+    "title": "Tide Marks",
+    "image": "/images/tide-marks.jpg",
+    "alt": "Diagram showing changes in coastal tide levels",
+    "summary": "A simple digital visualization of fifty years of tide records and shoreline change.",
+    "role": "Information Designer",
+    "focus": "Data organization and visual explanation",
+    "challenge": "A large table of measurements made long-term patterns difficult for a general audience to understand.",
+    "process": "Mara cleaned the records, selected representative intervals, and paired each visual pattern with a plain-language explanation.",
+    "outcome": "The final concept communicates long-term change without hiding uncertainty or requiring visitors to understand technical datasets."
+  }
+]

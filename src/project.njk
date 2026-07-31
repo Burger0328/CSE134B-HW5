@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: projects
+  size: 1
+  alias: project
+permalink: "/projects/{{ project.slug }}/index.html"
+pageKey: projects
+eleventyComputed:
+  title: "{{ project.title }}"
+  description: "{{ project.summary }}"
+---
+<article class="project-detail">
+    <p class="eyebrow">Project {{ project.number }}</p>
+    <h1>{{ project.title }}</h1>
+    <p class="intro">{{ project.summary }}</p>
+
+    <img src="{{ project.image }}" alt="{{ project.alt }}" width="1536" height="1024">
+
+    <dl class="project-meta">
+        <div>
+            <dt>Role</dt>
+            <dd>{{ project.role }}</dd>
+        </div>
+        <div>
+            <dt>Focus</dt>
+            <dd>{{ project.focus }}</dd>
+        </div>
+    </dl>
+
+    <section>
+        <h2>Challenge</h2>
+        <p>{{ project.challenge }}</p>
+    </section>
+
+    <section>
+        <h2>Process</h2>
+        <p>{{ project.process }}</p>
+    </section>
+
+    <section>
+        <h2>Outcome</h2>
+        <p>{{ project.outcome }}</p>
+    </section>
+
+    <p><a href="/projects/">Return to all projects</a></p>
+</article>

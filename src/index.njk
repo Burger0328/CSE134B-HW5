@@ -1,0 +1,62 @@
+---
+layout: layouts/base.njk
+title: Home
+description: Meet Mara Voss and explore selected digital archive and interactive media projects.
+pageKey: home
+permalink: /index.html
+---
+<section>
+    <p class="eyebrow">Digital Archivist and Interactive Media Designer</p>
+    <h1>Mara Voss</h1>
+    <p class="intro">
+        I create thoughtful digital experiences that help preserve historical
+        materials and make cultural stories easier to explore.
+    </p>
+    <p>
+        <a class="button-link" href="/projects/">View Projects</a>
+        <a class="button-link" href="/contact/">Contact Mara</a>
+    </p>
+</section>
+
+<section>
+    <h2>Featured Projects</h2>
+    <ol class="project-grid">
+        {% for project in projects %}
+            {% if loop.index <= 3 %}
+                <li>
+                    <article class="project-card">
+                        <p class="project-number">{{ project.number }}</p>
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.summary }}</p>
+                        <a href="/projects/{{ project.slug }}/">Read about this project</a>
+                    </article>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</section>
+
+<section>
+    <h2>Focus Areas</h2>
+    <ul class="focus-list">
+        <li class="content-card">Digital preservation</li>
+        <li class="content-card">Interactive storytelling</li>
+        <li class="content-card">Accessible web design</li>
+        <li class="content-card">Archival research</li>
+        <li class="content-card">Metadata organization</li>
+    </ul>
+</section>
+
+<section>
+    <coastal-weather
+        data-state="idle"
+        latitude="44.6368"
+        longitude="-124.0535"
+        location="Port Alder area, Oregon Coast"
+        units="fahrenheit">
+        <p data-weather-fallback>
+            Live coastal conditions require JavaScript. Forecast information is
+            also available directly from <a href="https://open-meteo.com/">Open-Meteo</a>.
+        </p>
+    </coastal-weather>
+</section>
