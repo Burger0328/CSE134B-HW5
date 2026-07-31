@@ -11,7 +11,7 @@ if (themePicker) {
 
 function readTheme() {
     try {
-        const savedTheme = localStorage.getItem("mara-theme");
+        const savedTheme = localStorage.getItem("theme");
 
         if (savedTheme === "light" || savedTheme === "dark") {
             return savedTheme;
@@ -25,18 +25,22 @@ function readTheme() {
 
 function changeTheme(event) {
     const selectedTheme = event.target.value;
+    const root = document.documentElement;
 
     if (selectedTheme === "system") {
-        delete document.documentElement.dataset.theme;
+        delete root.dataset.theme;
+        root.classList.remove("light", "dark");
     } else {
-        document.documentElement.dataset.theme = selectedTheme;
+        root.dataset.theme = selectedTheme;
+        root.classList.remove("light", "dark");
+        root.classList.add(selectedTheme);
     }
 
     try {
         if (selectedTheme === "system") {
-            localStorage.removeItem("mara-theme");
+            localStorage.removeItem("theme");
         } else {
-            localStorage.setItem("mara-theme", selectedTheme);
+            localStorage.setItem("theme", selectedTheme);
         }
     } catch (error) {
         console.warn("The theme preference could not be saved.", error);
