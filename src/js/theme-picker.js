@@ -1,12 +1,16 @@
 const themePicker = document.querySelector("[data-theme-picker]");
 
 if (themePicker) {
-    const themeChoice = themePicker.querySelector("select");
+    const themeChoices = themePicker.querySelectorAll('input[name="theme"]');
     const savedTheme = readTheme();
+    const savedChoice = themePicker.querySelector(`input[value="${savedTheme}"]`);
 
-    themeChoice.value = savedTheme;
+    savedChoice.checked = true;
     themePicker.hidden = false;
-    themeChoice.addEventListener("input", changeTheme);
+
+    for (const themeChoice of themeChoices) {
+        themeChoice.addEventListener("change", changeTheme);
+    }
 }
 
 function readTheme() {
@@ -24,7 +28,7 @@ function readTheme() {
 }
 
 function changeTheme(event) {
-    const selectedTheme = event.target.value;
+    const selectedTheme = event.currentTarget.value;
     const root = document.documentElement;
 
     if (selectedTheme === "system") {

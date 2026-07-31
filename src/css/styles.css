@@ -146,6 +146,15 @@ nav a[aria-current="page"] {
     gap: 0.4rem;
 }
 
+.theme-picker fieldset {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 select,
 input,
 textarea,
