@@ -204,11 +204,13 @@ class CoastalWeather extends HTMLElement {
         this.querySelector("[data-weather-wind]").textContent =
             `${current.wind_speed_10m} ${windSymbol}`;
 
-        const timeElement = this.querySelector("[data-weather-time]");
+        const timeContainer = this.querySelector("[data-weather-time]");
+        const timeElement = document.createElement("time");
         timeElement.dateTime = current.time;
         timeElement.textContent = Number.isNaN(weatherTime.getTime())
             ? current.time
             : weatherTime.toLocaleString();
+        timeContainer.replaceChildren(timeElement);
 
         this.querySelector("[data-weather-details]").hidden = false;
         this.querySelector("[data-weather-retry]").hidden = true;

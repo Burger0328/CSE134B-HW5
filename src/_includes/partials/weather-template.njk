@@ -1,6 +1,5 @@
 <template id="coastal-weather-template">
-    <article class="weather-card">
-        <h2>Coastal Conditions</h2>
+    <div class="weather-card">
         <p class="weather-status" data-weather-status role="status"></p>
 
         <p>
@@ -16,7 +15,7 @@
             <li><strong>Conditions:</strong> <span data-weather-description></span></li>
             <li><strong>Temperature:</strong> <span data-weather-temperature></span></li>
             <li><strong>Wind:</strong> <span data-weather-wind></span></li>
-            <li><strong>Updated:</strong> <time data-weather-time></time></li>
+            <li><strong>Updated:</strong> <span data-weather-time></span></li>
         </ul>
 
         <button type="button" data-weather-retry hidden>Try again</button>
@@ -24,5 +23,5 @@
             Weather data from
             <a href="https://open-meteo.com/" rel="external">Open-Meteo</a>.
         </p>
-    </article>
+    </div>
 </template>
