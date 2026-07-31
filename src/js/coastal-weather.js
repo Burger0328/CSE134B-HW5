@@ -37,6 +37,7 @@ class CoastalWeather extends HTMLElement {
             : "fahrenheit";
         this.unitsChoice.addEventListener("change", this.handleUnitsChange);
         this.isInitialized = true;
+        this.setState("idle", "Current coastal conditions have not loaded yet.");
         this.loadWeather();
     }
 
