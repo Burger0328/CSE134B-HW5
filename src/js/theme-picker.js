@@ -6,7 +6,7 @@ if (themePicker) {
 
     themeChoice.value = savedTheme;
     themePicker.hidden = false;
-    themeChoice.addEventListener("change", changeTheme);
+    themeChoice.addEventListener("input", changeTheme);
 }
 
 function readTheme() {
