@@ -11,18 +11,13 @@
             </select>
         </p>
 
-        <dl class="weather-details" data-weather-details hidden>
-            <dt>Location</dt>
-            <dd data-weather-location></dd>
-            <dt>Conditions</dt>
-            <dd data-weather-description></dd>
-            <dt>Temperature</dt>
-            <dd data-weather-temperature></dd>
-            <dt>Wind</dt>
-            <dd data-weather-wind></dd>
-            <dt>Updated</dt>
-            <dd><time data-weather-time></time></dd>
-        </dl>
+        <ul class="weather-details" data-weather-details hidden>
+            <li><strong>Location:</strong> <span data-weather-location></span></li>
+            <li><strong>Conditions:</strong> <span data-weather-description></span></li>
+            <li><strong>Temperature:</strong> <span data-weather-temperature></span></li>
+            <li><strong>Wind:</strong> <span data-weather-wind></span></li>
+            <li><strong>Updated:</strong> <time data-weather-time></time></li>
+        </ul>
 
         <button type="button" data-weather-retry hidden>Try again</button>
         <p class="weather-credit">
