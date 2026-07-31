@@ -197,22 +197,39 @@ class CoastalWeather extends HTMLElement {
 
         this.dataset.state = "ready";
         this.querySelector("[data-weather-status]").textContent = "Current conditions are ready.";
-        this.querySelector("[data-weather-location]").textContent = location;
-        this.querySelector("[data-weather-description]").textContent = describeWeather(current.weather_code);
-        this.querySelector("[data-weather-temperature]").textContent =
-            `${current.temperature_2m}${temperatureSymbol}, feels like ${current.apparent_temperature}${temperatureSymbol}`;
-        this.querySelector("[data-weather-wind]").textContent =
-            `${current.wind_speed_10m} ${windSymbol}`;
-
-        const timeContainer = this.querySelector("[data-weather-time]");
+        const details = this.querySelector("ul[data-weather-details]");
+        const locationItem = createWeatherDetail("Location", location);
+        const conditionsItem = createWeatherDetail(
+            "Conditions",
+            describeWeather(current.weather_code)
+        );
+        const temperatureItem = createWeatherDetail(
+            "Temperature",
+            `${current.temperature_2m}${temperatureSymbol}, feels like ${current.apparent_temperature}${temperatureSymbol}`
+        );
+        const windItem = createWeatherDetail(
+            "Wind",
+            `${current.wind_speed_10m} ${windSymbol}`
+        );
+        const updatedItem = document.createElement("li");
+        const updatedLabel = document.createElement("strong");
         const timeElement = document.createElement("time");
+
+        updatedLabel.textContent = "Updated: ";
         timeElement.dateTime = current.time;
         timeElement.textContent = Number.isNaN(weatherTime.getTime())
             ? current.time
             : weatherTime.toLocaleString();
-        timeContainer.replaceChildren(timeElement);
+        updatedItem.append(updatedLabel, timeElement);
+        details.replaceChildren(
+            locationItem,
+            conditionsItem,
+            temperatureItem,
+            windItem,
+            updatedItem
+        );
 
-        this.querySelector("[data-weather-details]").hidden = false;
+        details.hidden = false;
         this.querySelector("[data-weather-retry]").hidden = true;
     }
 
@@ -250,6 +267,15 @@ class CoastalWeather extends HTMLElement {
             console.warn("Weather could not be cached.", error);
         }
     }
+}
+
+function createWeatherDetail(labelText, valueText) {
+    const item = document.createElement("li");
+    const label = document.createElement("strong");
+
+    label.textContent = `${labelText}: `;
+    item.append(label, document.createTextNode(valueText));
+    return item;
 }
 
 function describeWeather(code) {
