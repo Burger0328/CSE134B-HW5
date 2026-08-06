@@ -36,7 +36,7 @@ permalink: /index.html
         <a href="/projects/">View all projects</a>
     </div>
     <ol class="project-grid featured-grid">
-        {% for project in projects %}{% if loop.index <= 6 %}
+        {% for project in projects %}
         <li>
             <article class="project-card">
                 {% if project.image %}<img src="{{ project.image }}" alt="{{ project.alt }}" width="1200" height="800">{% else %}<div class="project-visual" aria-hidden="true"><span>{{ project.number }}</span></div>{% endif %}
@@ -47,7 +47,7 @@ permalink: /index.html
                 <a href="/projects/{{ project.slug }}/">View case study</a>
             </article>
         </li>
-        {% endif %}{% endfor %}
+        {% endfor %}
     </ol>
 </section>
 
