@@ -4,16 +4,29 @@
         {% include "partials/head.njk" %}
     </head>
 
-    <body>
+    <body{% if pageKey == "home" %} class="intro-home"{% endif %}>
+        {% if pageKey == "home" %}
+        <div class="site-intro" data-site-intro>
+            <img src="/images/og.png" alt="" width="1732" height="908">
+            <div class="intro-shade"></div>
+            <div class="intro-copy">
+                <p class="intro-kicker">Hardware · Software · Systems</p>
+                <a class="intro-enter" href="#main-content" data-enter-portfolio>Enter Portfolio <span aria-hidden="true">↘</span></a>
+            </div>
+        </div>
+        <noscript><style>.site-intro{display:none}</style></noscript>
+        {% endif %}
         <a class="skip-link" href="#main-content">Skip to main content</a>
         {% include "partials/header.njk" %}
 
-        <main id="main-content"{% if not excludeFromSearch %} data-pagefind-body{% endif %}>
+        <main id="main-content" tabindex="-1"{% if not excludeFromSearch %} data-pagefind-body{% endif %}>
             {{ content | safe }}
         </main>
 
         {% include "partials/footer.njk" %}
         <script type="module" src="/js/theme-picker.js"></script>
+        {% if pageKey == "home" %}<script type="module" src="/js/intro.js"></script>{% endif %}
+        <script type="module" src="/js/page-transitions.js"></script>
         <script type="module" src="/js/reveal.js"></script>
         {% if pageScript %}<script type="module" src="{{ pageScript }}"></script>{% endif %}
     </body>
