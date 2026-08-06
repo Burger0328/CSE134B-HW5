@@ -2,6 +2,8 @@
 
 Personal portfolio for Zhibo Wang, a Computer Engineering student at UC San Diego. The site presents embedded systems, TinyML, FPGA, VLSI, power electronics, performance engineering, image processing, and software projects as concise case studies.
 
+**Live site:** [zhibo-wang-engineering-portfolio.netlify.app](https://zhibo-wang-engineering-portfolio.netlify.app/)
+
 ## Highlights
 
 - Data-driven project pages generated from one structured project collection
