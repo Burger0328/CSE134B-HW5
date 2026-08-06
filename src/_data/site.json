@@ -1,18 +1,18 @@
 {
-  "title": "Mara Voss Portfolio",
-  "author": "Mara Voss",
-  "description": "Portfolio of Mara Voss, a digital archivist and interactive media designer.",
-  "email": "hello@maravoss.com",
-  "location": "Port Alder, Oregon",
+  "title": "Zhibo Wang | Computer Engineer",
+  "author": "Zhibo Wang",
+  "description": "Computer engineering portfolio featuring embedded systems, FPGA design, TinyML, VLSI, signal processing, and performance engineering.",
+  "email": "zhw112@ucsd.edu",
+  "location": "La Jolla, California",
   "year": 2026,
   "socialLinks": [
-    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/maravoss" }
+    { "label": "GitHub", "url": "https://github.com/Burger0328" }
   ],
   "navigation": [
     { "key": "home", "label": "Home", "url": "/" },
     { "key": "about", "label": "About", "url": "/about/" },
-    { "key": "experience", "label": "Experience", "url": "/experience/" },
     { "key": "projects", "label": "Projects", "url": "/projects/" },
+    { "key": "experience", "label": "Experience", "url": "/experience/" },
     { "key": "resume", "label": "Resume", "url": "/resume/" },
     { "key": "contact", "label": "Contact", "url": "/contact/" },
     { "key": "search", "label": "Search", "url": "/search/" }

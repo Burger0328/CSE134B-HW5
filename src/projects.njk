@@ -1,33 +1,18 @@
 ---
 layout: layouts/base.njk
 title: Projects
-description: Selected digital preservation and interactive storytelling projects by Mara Voss.
+description: Embedded systems, FPGA, TinyML, VLSI, power electronics, performance engineering, and software projects by Zhibo Wang.
 pageKey: projects
 permalink: /projects/index.html
 ---
-<section>
-    <h1>Projects</h1>
-    <p class="intro">
-        Mara's projects explore digital preservation, local history,
-        interactive storytelling, and accessible web design.
-    </p>
-</section>
-
-<section>
-    <h2>Selected Projects</h2>
-    <ol class="project-grid">
-        {% for project in projects %}
-            <li>
-                <article class="project-card">
-                    <p class="project-number">{{ project.number }}</p>
-                    <img src="{{ project.image }}" alt="{{ project.alt }}" width="1536" height="1024">
-                    <h3>{{ project.title }}</h3>
-                    <p>{{ project.summary }}</p>
-                    <p><strong>Role:</strong> {{ project.role }}</p>
-                    <p><strong>Focus:</strong> {{ project.focus }}</p>
-                    <a href="/projects/{{ project.slug }}/">View Project Details</a>
-                </article>
-            </li>
-        {% endfor %}
-    </ol>
-</section>
+<section class="page-hero"><p class="eyebrow">Selected engineering work</p><h1>Projects</h1><p class="intro">Each project is documented around the problem, my contribution, the engineering process, and the result.</p></section>
+<ol class="project-grid">
+{% for project in projects %}
+    <li><article class="project-card">
+        {% if project.image %}<img src="{{ project.image }}" alt="{{ project.alt }}" width="1200" height="800">{% else %}<div class="project-visual" aria-hidden="true"><span>{{ project.number }}</span></div>{% endif %}
+        <p class="project-number">{{ project.number }}</p><h2>{{ project.title }}</h2>
+        <p>{{ project.summary }}</p><p class="metric">{{ project.metric }}</p><p class="stack">{{ project.stack }}</p>
+        <a href="/projects/{{ project.slug }}/">Read case study</a>
+    </article></li>
+{% endfor %}
+</ol>

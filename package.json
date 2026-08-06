@@ -1,9 +1,9 @@
 {
-  "name": "mara-voss-portfolio-hw5",
+  "name": "zhibo-wang-engineering-portfolio",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Mara Voss portfolio rebuilt with JavaScript and Eleventy for CSE 134B Homework 5.",
+  "description": "Personal engineering portfolio for Zhibo Wang.",
   "scripts": {
     "start": "eleventy --serve",
     "dev": "eleventy --serve",

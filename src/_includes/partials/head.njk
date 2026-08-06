@@ -1,6 +1,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{{ description or site.description }}">
+<meta name="theme-color" content="#0b6b4f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title }} | {{ site.author }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:url" content="{{ siteUrl }}{{ page.url }}">
+<meta property="og:image" content="{{ siteUrl }}/images/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }} | {{ site.author }}">
+<meta name="twitter:description" content="{{ description or site.description }}">
+<meta name="twitter:image" content="{{ siteUrl }}/images/og.png">
+<link rel="canonical" href="{{ siteUrl }}{{ page.url }}">
 <title>{{ title }} | {{ site.title }}</title>
 <script type="module" src="/js/theme-init.js"></script>
 <link rel="stylesheet" href="/css/styles.css">

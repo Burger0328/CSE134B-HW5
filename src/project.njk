@@ -15,7 +15,7 @@ eleventyComputed:
     <h1>{{ project.title }}</h1>
     <p class="intro">{{ project.summary }}</p>
 
-    <img src="{{ project.image }}" alt="{{ project.alt }}" width="1536" height="1024">
+    {% if project.image %}<img src="{{ project.image }}" alt="{{ project.alt }}" width="1536" height="1024">{% else %}<div class="project-visual project-visual-large" aria-hidden="true"><span>{{ project.number }}</span></div>{% endif %}
 
     <dl class="project-meta">
         <div>
@@ -26,6 +26,8 @@ eleventyComputed:
             <dt>Focus</dt>
             <dd>{{ project.focus }}</dd>
         </div>
+        <div><dt>Stack</dt><dd>{{ project.stack }}</dd></div>
+        <div><dt>Result</dt><dd>{{ project.metric }}</dd></div>
     </dl>
 
     <section>
@@ -43,5 +45,6 @@ eleventyComputed:
         <p>{{ project.outcome }}</p>
     </section>
 
+    <p><a class="button-link" href="{{ project.repo }}">View repository on GitHub</a></p>
     <p><a href="/projects/">Return to all projects</a></p>
 </article>

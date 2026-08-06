@@ -1,7 +1,4 @@
 <footer class="site-footer" data-pagefind-ignore="all">
-    <p>&copy; {{ site.year }} {{ site.author }}</p>
-    {% for link in site.socialLinks %}
-        <p><a href="{{ link.url }}">{{ link.label }}</a></p>
-    {% endfor %}
-    <p><a href="/experiments/">HTML Experiments</a></p>
+    <p>&copy; {{ site.year }} {{ site.author }} · Built with semantic HTML, Eleventy, and care.</p>
+    <div class="footer-links">{% for link in site.socialLinks %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}<a href="mailto:{{ site.email }}">Email</a></div>
 </footer>

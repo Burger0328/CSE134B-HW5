@@ -1,63 +1,67 @@
 ---
 layout: layouts/base.njk
 title: Home
-description: Meet Mara Voss and explore selected digital archive and interactive media projects.
+description: Zhibo Wang is a computer engineering student building embedded systems, digital hardware, and performance-focused software.
 pageKey: home
 permalink: /index.html
 ---
-<section>
-    <p class="eyebrow">Digital Archivist and Interactive Media Designer</p>
-    <h1>Mara Voss</h1>
-    <p class="intro">
-        I create thoughtful digital experiences that help preserve historical
-        materials and make cultural stories easier to explore.
-    </p>
-    <p>
-        <a class="button-link" href="/projects/">View Projects</a>
-        <a class="button-link" href="/contact/">Contact Mara</a>
-    </p>
+<section class="hero">
+    <div>
+        <p class="eyebrow">Computer Engineer · Embedded Systems · Hardware + Software</p>
+        <h1>I build systems that connect sensing, computation, and the physical world.</h1>
+        <p class="intro">
+            I am Zhibo Wang, a Computer Engineering student at UC San Diego. My work spans
+            embedded firmware, TinyML, FPGA design, VLSI verification, power electronics,
+            signal processing, and tested software.
+        </p>
+        <div class="hero-actions">
+            <a class="button-link" href="/projects/">Explore my work</a>
+            <a class="text-link" href="/files/zhibo-wang-resume.pdf">Download resume</a>
+        </div>
+    </div>
+    <aside class="signal-card" aria-label="Engineering focus summary">
+        <p class="signal-label">Current signal</p>
+        <p class="signal-value">Open to internships and entry-level opportunities</p>
+        <dl>
+            <div><dt>Based in</dt><dd>La Jolla, CA</dd></div>
+            <div><dt>Studying</dt><dd>B.S. Computer Engineering</dd></div>
+            <div><dt>Strength</dt><dd>End-to-end prototyping</dd></div>
+        </dl>
+    </aside>
 </section>
 
 <section>
-    <h2>Featured Projects</h2>
-    <ol class="project-grid">
-        {% for project in projects %}
-            {% if loop.index <= 3 %}
-                <li>
-                    <article class="project-card">
-                        <p class="project-number">{{ project.number }}</p>
-                        <h3>{{ project.title }}</h3>
-                        <p>{{ project.summary }}</p>
-                        <a href="/projects/{{ project.slug }}/">Read about this project</a>
-                    </article>
-                </li>
-            {% endif %}
-        {% endfor %}
+    <div class="section-heading">
+        <div><p class="eyebrow">Selected work</p><h2>Projects with measurable outcomes</h2></div>
+        <a href="/projects/">View all projects</a>
+    </div>
+    <ol class="project-grid featured-grid">
+        {% for project in projects %}{% if loop.index <= 6 %}
+        <li>
+            <article class="project-card">
+                {% if project.image %}<img src="{{ project.image }}" alt="{{ project.alt }}" width="1200" height="800">{% else %}<div class="project-visual" aria-hidden="true"><span>{{ project.number }}</span></div>{% endif %}
+                <p class="project-number">{{ project.number }} / {{ project.focus }}</p>
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.summary }}</p>
+                <p class="metric">{{ project.metric }}</p>
+                <a href="/projects/{{ project.slug }}/">View case study</a>
+            </article>
+        </li>
+        {% endif %}{% endfor %}
     </ol>
 </section>
 
-<section>
-    <h2>Focus Areas</h2>
-    <ul class="focus-list">
-        <li class="content-card">Digital preservation</li>
-        <li class="content-card">Interactive storytelling</li>
-        <li class="content-card">Accessible web design</li>
-        <li class="content-card">Archival research</li>
-        <li class="content-card">Metadata organization</li>
-    </ul>
+<section class="capability-band">
+    <p class="eyebrow">How I work</p>
+    <h2>Across the full engineering loop</h2>
+    <div class="capability-grid">
+        <article><span>01</span><h3>Design</h3><p>Translate a problem into system architecture, interfaces, constraints, and measurable goals.</p></article>
+        <article><span>02</span><h3>Build</h3><p>Implement firmware, circuits, models, RTL, mechanical enclosures, and user-facing software.</p></article>
+        <article><span>03</span><h3>Verify</h3><p>Use simulations, self-checking tests, held-out evaluation, CI, and hardware measurements.</p></article>
+    </div>
 </section>
 
-<section>
-    <h2>Coastal Conditions</h2>
-    <coastal-weather
-        data-state="idle"
-        latitude="44.6368"
-        longitude="-124.0535"
-        location="Port Alder area, Oregon Coast"
-        units="fahrenheit">
-        <p data-weather-fallback>
-            Live coastal conditions require JavaScript. Forecast information is
-            also available directly from <a href="https://open-meteo.com/">Open-Meteo</a>.
-        </p>
-    </coastal-weather>
+<section class="contact-strip">
+    <div><p class="eyebrow">Let’s connect</p><h2>Interested in embedded, hardware, or systems work?</h2></div>
+    <a class="button-link" href="mailto:{{ site.email }}">{{ site.email }}</a>
 </section>
