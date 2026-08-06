@@ -1,5 +1,12 @@
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// Browsers may restore a page from the back-forward cache with its old classes.
+// Always return it to an interactive, visible state when it is shown again.
+window.addEventListener("pageshow", (event) => {
+    document.body.classList.remove("page-is-leaving");
+    if (event.persisted) document.body.classList.add("page-restored");
+});
+
 if (!reducedMotion) {
     document.addEventListener("click", (event) => {
         const link = event.target.closest("a[href]");
@@ -10,6 +17,7 @@ if (!reducedMotion) {
         if (destination.origin !== window.location.origin || destination.pathname === window.location.pathname && destination.hash) return;
 
         event.preventDefault();
+        document.body.classList.remove("page-restored");
         document.body.classList.add("page-is-leaving");
         window.setTimeout(() => window.location.assign(destination.href), 260);
     });

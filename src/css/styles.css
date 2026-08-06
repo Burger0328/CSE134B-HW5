@@ -64,7 +64,8 @@ p { max-width:70ch; }
 .section-heading { display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:2rem; }
 .section-heading h2 { margin-bottom:0; }
 .project-grid { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem;margin:0;padding:0;list-style:none; }
-.project-card { display:flex;flex-direction:column;height:100%;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:.8rem;box-shadow:var(--shadow);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease; }
+.project-grid > li { min-width:0; }
+.project-card { display:flex;flex-direction:column;min-width:0;height:100%;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:.8rem;box-shadow:var(--shadow);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease; }
 .project-card:hover { transform:translateY(-.45rem);border-color:var(--accent);box-shadow:0 1.8rem 4rem rgb(20 40 30 / 16%); }
 .project-card img,.project-visual { width:100%;aspect-ratio:16/10;margin-bottom:1.2rem;border-radius:.45rem;object-fit:cover;background:linear-gradient(135deg,var(--accent-strong),#0e2820 70%);transition:transform .4s ease,filter .4s ease; }
 .project-card:hover img,.project-card:hover .project-visual { transform:scale(1.025);filter:saturate(1.08); }
@@ -72,7 +73,7 @@ p { max-width:70ch; }
 .project-visual span { color:var(--signal);font:600 clamp(4rem,12vw,8rem) "IBM Plex Mono",monospace;opacity:.9;transform:rotate(-8deg); }
 .project-visual-large { max-height:34rem; }
 .project-card h2,.project-card h3 { margin-bottom:.5rem; }
-.project-card p { color:var(--muted); }
+.project-card p { color:var(--muted);overflow-wrap:anywhere; }
 .project-card .metric { color:var(--text);font-weight:800; }
 .project-card .stack { margin-top:auto;padding-top:1rem;color:var(--accent);font-size:.68rem; }
 .project-card a { font-weight:700; }
@@ -126,6 +127,7 @@ button { cursor:pointer; }
 .js:not(.portfolio-entered) body.intro-home { overflow:hidden; }
 body { animation:page-enter .42s cubic-bezier(.2,.75,.25,1) both; }
 body.intro-home { animation:none; }
+body.page-restored { animation:none;opacity:1;transform:none; }
 body.page-is-leaving { animation:page-exit .26s ease both;pointer-events:none; }
 @keyframes intro-zoom { from { transform:scale(1.06);filter:brightness(.72); } to { transform:scale(1);filter:brightness(.95); } }
 @keyframes intro-copy { from { opacity:0;transform:translateY(1.3rem); } to { opacity:1;transform:translateY(0); } }
